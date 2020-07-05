@@ -69,6 +69,10 @@ make -j 8 && make install
 
 过程比较漫长请耐心等待
 
+![make](MySQL-崔雨.assets/make-1593924824205.jpg)
+
+![make install](MySQL-崔雨.assets/make install-1593924828541.jpg)
+
 **PS：**make的时候通过参数 ``-j``可以指定参与编译的核数，我的参数是 ``make -j 8``，虚拟机是八核，但是每次都会因为内存不够而崩溃，我认为应该是由于运行速度太快内存来不及释放，所以就只使用默认配置来进行了 ``make `` ,时间较长，但是最终成功了，也完成了``make install``
 
 **安装完成**
@@ -79,6 +83,8 @@ make -j 8 && make install
 
 所以我就按照链接中的操作进行了**初始化**
 
+![inital](MySQL-崔雨.assets/inital.jpg)
+
 注意：使用``mysqld``启动服务的时候可能会出现找不到命令的情况，这是因为没有配置环境变量，指定命令的位置就好，我这里是安装在``/usr/local/mysql-8.0.20/bin/mysqld``，记得保存早初始话完成之后生成的随机密码
 
 如果此时检查用户目录下的``data``中已经有了数据，那么证明初始化完成了。接下来进行安装
@@ -88,6 +94,8 @@ make -j 8 && make install
 ``mysqld_safe --defaults-file=/u01/my3306/my.cnf``
 
 注意``defaults-file``后指定的是配置文件的路径。
+
+![mysqld_safe](MySQL-崔雨.assets/mysqld_safe.jpg)
 
 如果此时显示
 
@@ -102,6 +110,8 @@ make -j 8 && make install
 之后就修改成功了，然后我们``exit;``之后重新用新的密码就可以登录成功了。
 
 **插入数据**
+
+![数据库](MySQL-崔雨.assets/数据库.jpg)
 
 这个地方就就不再赘述了。
 
